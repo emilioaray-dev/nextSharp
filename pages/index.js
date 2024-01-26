@@ -1,5 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import heroImage from "../public/heroBackground.jpeg";
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -8,6 +10,14 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Image src={heroImage}  alt="banner"
+            width={heroImage.width} // Resolución width de la imagen fuente.
+            height={heroImage.height} // Resolución height de la imagen fuente.
+            priority={true}
+            quality={75}
+            sizes="100vw"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', zIndex: '-1'}}
+          />
 
       <main className={styles.main}>
         <h1 className={styles.title}>
